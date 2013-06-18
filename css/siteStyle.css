@@ -1,0 +1,164 @@
+/* 
+    Document   : siteStyle
+    Created on : Jun 17, 2013, 12:36:38 PM
+    Author     : amar
+    Description:
+        The main style sheet of the site,
+*/
+body {
+    font-family: arial, verdana, tahoma;
+
+}
+
+#wrapper { 
+    width: 1000px;
+    margin: 0px auto;
+    border: 1px solid #dddddd;
+        
+}
+
+#header {
+    background-color: #B8DCF2;
+    border: 1px solid #3F91C4;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 8px #D0D0D0;
+    height: 60px;
+    font-size: 14px;
+}
+
+#header_links {
+    float: right;
+    margin-right: 20px; 
+    font-size: 13px;
+}
+
+#header_links a {
+    text-decoration: none;
+    color: #004c9b;
+}
+
+#header_links a:hover {
+    text-decoration: underline;
+}
+
+#footer {
+    background-color: #444444;
+    border: 1px solid #000000;
+    padding: 10px;
+    -webkit-box-shadow: 0 0 8px #D0D0D0;
+    color: #dddddd;
+}
+
+#main_content {   
+    min-height: 72%;   
+}
+
+input[type="text"], input[type="password"]{
+    width: 250px;
+    height: 35px;
+    padding: 0px 5px;
+    border:1px solid #aaaaaa;
+}
+
+.mini_box {
+    border:1px solid #888888;
+    width: 400px;
+    margin: 30px auto;
+    padding: 10px;
+   
+}
+
+.mini_box input[type="text"], .mini_box input[type="password"]{
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #444444;
+}
+
+.mini_box p {
+    margin-left: 30px;
+    font-size: 12px;
+    color: #444444;
+}
+
+#login_container input[type="submit"]{
+    float: right;
+    margin: 10px 120px 0px 0px;
+}
+
+#forgot_password input[type="submit"] {
+    float: right;
+    margin-right: 20px;
+}
+
+#password_reset input[type="submit"] {
+    float: right;
+    margin-right: 70px;
+}
+
+.box_title {
+    font-size: 20px;
+    font-weight: bold;
+    color:#777777;
+    margin: 10px 20px;
+}
+
+.site_button{
+	padding:5px 8px;
+	cursor: pointer;
+	
+	color:#ffffff;
+	font-weight: bold;
+	border: 1px solid #004C9B;
+	border-radius: 3px 3px 3px 3px;
+	text-shadow: 0 -1px 0 #444444;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 1px rgba(0, 0, 0, 0.3);
+	background-color:#0496DA;
+	background-image: linear-gradient(top, #0496DA 0%, #0067CD 100%);
+	background-image: -o-linear-gradient(top, #0496DA 0%, #0067CD 100%);
+	background-image: -moz-linear-gradient(top, #0496DA 0%, #0067CD 100%);
+	background-image: -webkit-linear-gradient(top, #0496DA 0%, #0067CD 100%);
+	background-image: -ms-linear-gradient(top, #0496DA 0%, #0067CD 100%);
+}
+
+.site_button:hover{
+	background-color:#0383d3;	
+	background-image: linear-gradient(top, #0383d3 0%, #004c9b 100%);
+	background-image: -o-linear-gradient(top, #0383d3 0%, #004c9b 100%);
+	background-image: -moz-linear-gradient(top, #0383d3 0%, #004c9b 100%);
+	background-image: -webkit-linear-gradient(top, #0383d3 0%, #004c9b 100%);
+	background-image: -ms-linear-gradient(top, #0383d3 0%, #004c9b 100%);
+}
+
+.site_button:active{	
+	background-color:#026fcb;	
+	background-image: linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -o-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -moz-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -webkit-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+	background-image: -ms-linear-gradient(top, #026fcb 0%, #004c9b 100%);
+}
+
+.mini_box .top_links {
+    float: right;
+    font-size: 12px;
+    text-decoration: none;
+    margin: -40px 40px 0px 0px;
+    color: #026fcb;
+}
+
+.mini_box .top_links:hover {
+    text-decoration: underline;
+}
+
+.error_msg {
+    color: #E35252;
+    font-size: 12px;
+}
+
+#login_container .error_msg, #forgot_password .error_msg {
+    float: left;
+}
+
+.invisible {
+    display: none;
+}

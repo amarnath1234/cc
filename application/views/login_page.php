@@ -1,39 +1,51 @@
-<html>
-    <head>
-        <title>cc - login</title>
-    </head>
-    <body>
-        <div id="login_container">
-            <?php
-            $formAttributes = array('class' => 'login_form', 'id' => 'login_form');
 
+        <?php
+        include 'forms/form_elements.php';
+        ?>
+        <div class="mini_box" id="forgot_password">
+            <?php 
+            $formAttributes = array('class' => 'forgot_password_form', 'id' => 'forgot_password_form', 'onSubmit' => 'return passwordForgotFormCheck()');
+            $submitAttributes = 'class = "site_button"';
+            echo form_open('forgotPassword', $formAttributes);
+            ?>
+            <div class="box_title">Password recovery</div>
+            <a class="top_links" href="">Log In</a>
+            
+            <p>Enter your email address below to get the password reset link</p>
+            <br/><?=form_input($email)?>
+            
+            <?php echo form_submit('passwordSubmit', 'Get mail', $submitAttributes);?>
+            
+            
+            <br/><br/><div class='error_msg'>Invalid email! Please try again..</div>
+            <?php
+            
+            echo form_close();
+            ?>
+            
+        </div>    
+
+        <div class="mini_box" id="login_container">
+            <?php
+            $formAttributes = array('class' => 'login_form', 'id' => 'login_form','onSubmit' => 'return loginFormCheck()');
+            $submitAttributes = 'class = "site_button"';
             echo form_open('account', $formAttributes);
 
-            $email = array(
-              'name'        => 'email',
-              'id'          => 'email',
-              'class'       => 'form_input', 
-              'value'       => '',
-              'maxlength'   => '100',
-              'placeholder' => 'Email'
-            );
+            ?>
+            <div class='box_title'> Log In </div>
+            <a class="top_links" href="">Forgot Password?</a>
+            <br/><?=form_input($email)?>
+            <br/><?=form_input($password)?>
             
-            $password = array(
-              'name'        => 'password',
-              'id'          => 'password',
-              'class'       => 'form_input', 
-              'type'        => 'password', 
-              'value'       => '',
-              'maxlength'   => '100',
-              'placeholder' => 'Password'
-            );
-
-            echo form_input($email);
-            echo '<br/>'.form_input($password);
-            echo '<br/>'.form_submit('loginSubmit', 'Login');
+            <br/><?php echo form_submit('loginSubmit', 'Log In', $submitAttributes);?>
+            
+            
+            <br/><div class='error_msg'>Invalid credentials! Please try again..</div>
+            <div style="clear:both;"></div>
+            <?php
             echo form_close();
             ?>
         </div>
-    </body>
-</html>
-    
+
+        
+   
