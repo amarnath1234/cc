@@ -29,6 +29,7 @@
 
         <!-- custom scripts and style sheets -->
         <script type="text/javascript" src="<?= base_url('js/md5.js'); ?>"></script>
+        <script type="text/javascript" src="<?= base_url('js/fieldValidation.js'); ?>"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="<?= base_url('css/siteStyle.css'); ?>" />
         <script type="text/javascript" src="<?= base_url('js/cc_main.js'); ?>"></script>
         <!-- end of custom scripts and style sheets -->

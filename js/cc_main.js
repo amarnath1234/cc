@@ -25,7 +25,7 @@ function loginFormCheck() {
     
     $('.error_msg').hide();
     var error_msg = '';
-
+    
 
     if($('#login_container').find('#password').val() != '') {
         var passwordEncoded = hex_md5($('#login_container').find('#password').val());
