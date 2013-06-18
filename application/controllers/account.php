@@ -14,7 +14,26 @@ ChromePhp::log('this is a log message');
         if ($this->input->is_ajax_request()) {
             // the post has come from the javascript, hence validate and proceed
             
-           print_r($this->input->post());
+          $this->load->library('form_validation');
+
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('password', 'Password', 'required');
+
+            if ($this->form_validation->run() == FALSE) {
+                $errorData = validation_errors();
+                $errorData = str_replace('<p>','',$errorData);
+                $errorData = str_replace('</p>','<br>',$errorData);
+                $ret_val = array('status' => 'error',
+                                'data' => $errorData);
+                echo json_encode($ret_val);
+            } else {
+                //validation passed.. continue
+                
+                $ret_val = array('status' => 'success',
+                                'data' => 1);
+                echo json_encode($ret_val);
+                
+            }
         } else {
             $pageDataArray = array();
 

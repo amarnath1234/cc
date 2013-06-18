@@ -22,24 +22,36 @@ function showForgotPasswordBox() {
 }
 
 function loginFormCheck() {
-    if($('#login_container').find('#password').val() != '') {
-    var passwordEncoded = hex_md5($('#login_container').find('#password').val());
-    $('#login_container').find('#password').val(passwordEncoded);
-    }
+    
     $('.error_msg').hide();
     var error_msg = '';
 
+
+    if($('#login_container').find('#password').val() != '') {
+        var passwordEncoded = hex_md5($('#login_container').find('#password').val());
+        $('#login_container').find('#password').val(passwordEncoded);
+    }
     serializedData = $('#login_container input').serialize();
-    alert(serializedData);
+   
     var url = baseurl+'account';
     $.ajax({
         url: url,
         type: "post",
         data: serializedData,
+        dataType: 'json',
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR) {
-           console.log(response);
-            
+           
+            if(response.status == 'error'){
+                // server side validation is failed
+              
+                $('#loginErrorMsg').html(response.data);
+                $('#loginErrorMsg').fadeIn(100);
+                
+                console.log('it is an error status');
+            } else if(response.status == 'success') {
+                console.log('it is an success status');
+            }
            
             //$.each(response, function(key, val) {   });
 					
