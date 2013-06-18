@@ -43,11 +43,9 @@ function loginFormCheck() {
         success: function(response, textStatus, jqXHR) {
            
             if(response.status == 'error'){
-                // server side validation is failed
-              
+                // server side validation is failed              
                 $('#loginErrorMsg').html(response.data);
-                $('#loginErrorMsg').fadeIn(100);
-                
+                $('#loginErrorMsg').fadeIn(100);                
                 console.log('it is an error status');
             } else if(response.status == 'success') {
                 console.log('it is an success status');
@@ -55,7 +53,6 @@ function loginFormCheck() {
            
             //$.each(response, function(key, val) {   });
 					
-           
         },
        
         error: function(jqXHR, textStatus, errorThrown) {
