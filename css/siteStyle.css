@@ -92,7 +92,7 @@ input[type="text"], input[type="password"]{
 
 #password_reset input[type="submit"] {
     float: right;
-    margin-right: 70px;
+    margin-right: 40px;
 }
 
 .box_title {

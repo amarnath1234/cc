@@ -1,15 +1,15 @@
-
         <?php
         include 'forms/form_elements.php';
         ?>
+
         <div class="mini_box" id="forgot_password">
             <?php 
             $formAttributes = array('class' => 'forgot_password_form', 'id' => 'forgot_password_form', 'onSubmit' => 'return passwordForgotFormCheck()');
             $submitAttributes = 'class = "site_button"';
-            echo form_open('forgotPassword', $formAttributes);
+            echo form_open('account', $formAttributes);
             ?>
             <div class="box_title">Password recovery</div>
-            <a class="top_links" href="">Log In</a>
+            <a class="top_links" href="javascript:showLoginBox()">Log In</a>
             
             <p>Enter your email address below to get the password reset link</p>
             <br/><?=form_input($email)?>
@@ -33,7 +33,7 @@
 
             ?>
             <div class='box_title'> Log In </div>
-            <a class="top_links" href="">Forgot Password?</a>
+            <a class="top_links" href="javascript:showForgotPasswordBox()">Forgot Password?</a>
             <br/><?=form_input($email)?>
             <br/><?=form_input($password)?>
             
