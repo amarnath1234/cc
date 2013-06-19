@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('#forgot_password').hide();
     $('.error_msg').hide();
@@ -13,7 +12,6 @@ $(document).ready(function() {
 function showLoginBox() {
     $('#forgot_password').hide();
     $('#login_container').show();
-
 }
 
 function showForgotPasswordBox() {
@@ -26,7 +24,6 @@ function loginFormCheck() {
     $('.error_msg').hide();
     var error_msg = '';
     
-
     if($('#login_container').find('#password').val() != '') {
         var passwordEncoded = hex_md5($('#login_container').find('#password').val());
         $('#login_container').find('#password').val(passwordEncoded);
@@ -43,16 +40,17 @@ function loginFormCheck() {
         success: function(response, textStatus, jqXHR) {
            
             if(response.status == 'error'){
-                // server side validation is failed              
+                // server side validation is failed         
+                $('#password').val('');               
                 $('#loginErrorMsg').html(response.data);
                 $('#loginErrorMsg').fadeIn(100);                
                 console.log('it is an error status');
             } else if(response.status == 'success') {
                 console.log('it is an success status');
-            }
-           
-            //$.each(response, function(key, val) {   });
-					
+                //response.data has the url to be redirected to   
+                window.location.replace(response.data);                
+            }           
+            //$.each(response, function(key, val) {   });					
         },
        
         error: function(jqXHR, textStatus, errorThrown) {
@@ -63,7 +61,6 @@ function loginFormCheck() {
          
         }
     });
-
 return false;
 }
 

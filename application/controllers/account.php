@@ -7,9 +7,10 @@ class Account extends CI_Controller {
     }
 
     function index() {
-$this->load->helper('ChromePhp');
-ChromePhp::log('this is a log message');
-
+       
+        if($this->session->userdata('role_id')){
+            $this->pageRedirect($this->session->userdata('role_id'));
+        }
 
         if ($this->input->is_ajax_request()) {
             // the post has come from the javascript, hence validate and proceed
@@ -28,18 +29,36 @@ ChromePhp::log('this is a log message');
                 echo json_encode($ret_val);
             } else {
                 //validation passed.. continue
-                
-                $ret_val = array('status' => 'success',
-                                'data' => 1);
-                echo json_encode($ret_val);
-                
+              
+                $this->load->model('account_manager');               
+                $result = $this->account_manager->loginValidate();
+                $redirectUrl = '';
+                if($result) {
+                    
+                    $url = '';
+                     switch ($this->session->userdata('role_id')) {
+                case 1:
+                    $url = base_url().'admin';                              
+                    break;
+                case 2:
+                    $url = base_url().'home';          
+                    break;
+                default:
+                    $url = base_url();          
+                    break;
+            }
+            
+                    $ret_val = array('status' => 'success',
+                                'data' => $url);
+                    echo json_encode($ret_val);
+                } else {
+                    $ret_val = array('status' => 'error',
+                                'data' => 'Invalid credentials! Please try again');
+                    echo json_encode($ret_val);
+                }
             }
         } else {
             $pageDataArray = array();
-
-            //if(isset($this->session->userdata('logged_in')) && ($this->session->userdata() == 1)) {
-            //    array_push($pageDataArray, array('loggedIn' => 1));
-            //}
 
             $data = array(
                 'pageLoad' => 'login_page',
@@ -49,6 +68,25 @@ ChromePhp::log('this is a log message');
         }
     }
 
+    function pageRedirect($roleId) {
+            switch ($roleId) {
+                case 1:
+                    redirect(base_url().'admin', 'refresh');                              
+                    break;
+                case 2:
+                    redirect(base_url().'home', 'refresh');          
+                    break;
+                default:
+                    redirect(base_url(), 'refresh');          
+                    break;
+            }
+    }
+
+    function logout() {
+        $this->session->sess_destroy();
+        redirect(base_url(), 'location');          
+    }
+    
     function resetPassword() {
 
         $pageDataArray = array();

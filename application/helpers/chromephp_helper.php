@@ -21,7 +21,7 @@
  * @package ChromePhp
  * @author Craig Campbell <iamcraigcampbell@gmail.com>
  */
-class ChromePhp
+class Chromephp
 {
     /**
      * @var string
