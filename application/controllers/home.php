@@ -7,6 +7,12 @@ class Home extends CI_Controller {
     }
 
     function index() {
-        echo 'ths is theHOMEpage ';
+        $pageDataArray = array();
+        
+        $data = array(
+                'pageLoad' => 'home_page',
+                'pageData' => $pageDataArray
+                );
+        $this->load->view('layout/content_layout',$data);        
     }
 }

@@ -7,6 +7,12 @@ class Admin extends CI_Controller {
     }
 
     function index() {
-        echo 'ths is the admin page ';
+         $pageDataArray = array();
+        
+        $data = array(
+                'pageLoad' => 'admin_dashboard',
+                'pageData' => $pageDataArray
+                );
+        $this->load->view('layout/content_layout',$data);       
     }
 }

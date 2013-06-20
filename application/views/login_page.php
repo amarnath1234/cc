@@ -16,7 +16,7 @@
             
             <?php echo form_submit('passwordSubmit', 'Get mail', $submitAttributes);?>            
             
-            <br/><br/><div class='error_msg'>Invalid email! Please try again..</div>
+            <br/><br/><div id="forgotPasswordErrorMsg" class='error_msg'>Invalid email! Please try again..</div>
             <?php            
             echo form_close();
             ?>            
