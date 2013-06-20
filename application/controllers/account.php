@@ -119,14 +119,13 @@ class Account extends CI_Controller {
                 $this->load->model('account_manager');
                 $resultName = $this->account_manager->checkIfEmailExistsInDatabase($this->input->post('email'));
                 if($resultName) {
-                    // email exists .. generate the password recovery link
+                    // email exists .... generate the password recovery link
                    $encodedPasswordRecoveryUrl = $this->account_manager->getEncodedPasswordRecoveryUrl($this->input->post('email'));
                    if($encodedPasswordRecoveryUrl) {
                        //gotthe link .. send it via email 
                        
                        $this->load->model('utilities/email');
                        $htmlString = $this->email->getPasswordRecoveryTemplate($encodedPasswordRecoveryUrl);
-                    
                    } else {
                        $ret_val = array('status' => 'error',
                                 'data' => 'Password Recovery link generation Failed! Please try again');
