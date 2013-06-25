@@ -77,7 +77,7 @@ function passwordForgotFormCheck() {
         dataType: 'json',
         // callback handler that will be called on success
         success: function(response, textStatus, jqXHR) {
-           alert('comin here');
+
            console.log(response);   
             //$.each(response, function(key, val) {   });					
         },

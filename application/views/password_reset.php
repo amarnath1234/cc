@@ -7,11 +7,13 @@ include 'forms/form_elements.php';
     <?php
     $formAttributes = array('class' => 'password_reset_form', 'id' => 'password_reset_form', 'onSubmit' => 'return passwordResetFormCheck()');
     $submitAttributes = 'class = "site_button"';
-    echo form_open('account/resetPassword', $formAttributes);
+    $hidden = array('email' => $emailId);
+    echo form_open('account/resetPassword', $formAttributes, $hidden);
+    
     ?>
     <div class='box_title'> Password Reset </div>
-    <a class="top_links" href="">Login</a>
-    <p>Please enter the new password for your account</p>
+    <a class="top_links" href="<?= base_url();?>">Login</a>
+    <p>Please enter the new password for your account - <?=$emailId?></p>
     <br/><?= form_input($password) ?>
     <br/><?= form_input($retypePassword) ?>
     <?php echo form_submit('passwordResetSubmit', ' Reset ', $submitAttributes); ?>

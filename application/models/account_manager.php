@@ -65,7 +65,7 @@ class Account_manager extends CI_Model {
         }
     }
     
-    function getEncodedPasswordRecoveryUrl($email) {
+    function getEncodedPasswordRecoveryUrl($email, $onlyHash = 0) {
         /*
          * Link generation description 
          * 
@@ -87,15 +87,24 @@ class Account_manager extends CI_Model {
                 $name = $row->name;
                 $passwordHash = $row->password;
             }            
-            
-            return base_url().'account/passwordRecovery/'.urlencode($email).'/'.md5($name.''.$email.''.$passwordHash);
+            if($onlyHash == 1) {
+                return md5($name.''.$email.''.$passwordHash);
+            } else {
+                return base_url().'account/passwordRecovery/'.urlencode($email).'/'.md5($name.''.$email.''.$passwordHash);
+            }
         } else {
             return false;
         }
         
     }
     
-    function passwordRecovery($email, $encodedHash) {
-        
+    function updateUserPassword($email, $password) {
+        $data = array(
+               'email' => $email,
+               'password' => $password
+            );
+
+        $this->db->where('email', $email);
+        return $this->db->update('login', $data); 
     }
 }
