@@ -18,7 +18,6 @@ include 'forms/form_elements.php';
     <br/><?= form_input($retypePassword) ?>
     <?php echo form_submit('passwordResetSubmit', ' Reset ', $submitAttributes); ?>
 
-
     <br/><div class='error_msg'>Invalid credentials! Please try again..</div>
     <div style="clear:both;"></div>
     <?php

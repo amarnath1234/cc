@@ -18,12 +18,12 @@ body {
 }
 
 #header {
-    background-color: #ffffff;/* #B8DCF2;
+    background-color: #B8DCF2;
     border: 1px solid #3F91C4;
     padding: 10px;
     -webkit-box-shadow: 0 0 8px #D0D0D0;
     height: 60px;
-    font-size: 14px;*/
+    font-size: 14px;
 }
 
 #header_links {
@@ -42,11 +42,11 @@ body {
 }
 
 #footer {
-  /*  background-color: #444444;
+    background-color: #444444;
     border: 1px solid #000000;
     padding: 10px;
     -webkit-box-shadow: 0 0 8px #D0D0D0;
-    color: #dddddd; */
+    color: #dddddd; 
 }
 
 #main_content {   
@@ -161,4 +161,56 @@ input[type="text"], input[type="password"]{
 
 .invisible {
     display: none;
+}
+
+.header_options {
+    background: #E8E8E8;
+    padding: 5px 7px;
+    border: 1px solid #cccccc;
+}
+
+.header_options a.right {
+    float:right;
+    margin-left: 10px;
+}
+
+.header_options a.left {
+    float:left;
+    margin-right: 10px;
+}
+
+.content_box {
+    padding: 5px;
+    margin: 0px auto;
+}
+
+.content_box .column {
+    width: 160px;
+    float: left;
+    margin: 15px;
+}
+
+.display_box{
+    width: 150px;
+    float:left;    
+    margin: 5px 10px 5px 10px;
+    border: 1px solid #111111;
+    padding:10px;
+    font-size: 13px;
+}
+
+.display_box .heading{
+    color: blue;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.display_box .author{
+    color: green;
+    font-style: italic;
+    float: right;
+}
+
+.display_box .mail_me{
+    float: right;
 }

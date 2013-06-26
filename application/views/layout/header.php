@@ -11,6 +11,7 @@
 	<!-- end : jquery stuff -->
        
         <!-- custom scripts and style sheets -->
+        <script type="text/javascript" src="<?= base_url('js/masonry.pkgd.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('js/md5.js'); ?>"></script>
         <script type="text/javascript" src="<?= base_url('js/fieldValidation.js'); ?>"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="<?= base_url('css/siteStyle.css'); ?>" />
