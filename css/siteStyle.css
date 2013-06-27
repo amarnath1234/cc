@@ -214,3 +214,21 @@ input[type="text"], input[type="password"]{
 .display_box .mail_me{
     float: right;
 }
+
+.main_box_left{
+    float: left;
+    width: 650px;
+    border: 1px solid #cccccc;
+    padding-left: 10px;
+}
+
+.main_box_left p{
+    margin-left: 20px; 
+}
+
+.help_box_right{
+    float: right;
+    width: 300px;
+    border: 1px solid #cccccc;
+    padding-left: 15px;
+}

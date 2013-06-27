@@ -41,6 +41,7 @@
 $route['default_controller'] = "account";
 $route['404_override'] = '';
 $route['logout'] = "account/logout";
-
+$route['register'] = "home/blockForm/register/0";
+$route['edit/(:num)'] = "home/blockForm/edit/$1";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
