@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `login` (
 
 INSERT INTO `login` (`id`, `name`, `email`, `password`, `role_id`, `created_on`, `Updated_on`, `delete_flag`) VALUES
 (1, 'admin', 'admin@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1, '2013-06-19 00:00:00', '2013-06-19 00:00:00', 0),
-(2, 'amar', 'amar@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 2, '2013-06-19 00:00:00', '2013-06-19 00:00:00', 0);
+(2, 'amar', 'amarnath.cmr2010@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 2, '2013-06-19 00:00:00', '2013-06-19 00:00:00', 0);
 
 -- --------------------------------------------------------
 
