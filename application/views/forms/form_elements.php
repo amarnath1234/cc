@@ -47,7 +47,8 @@ $description = array(
     'id' => 'description',
     'class' => 'form_input',
     'value' => set_value('description', isset($dbData['description']) ? $dbData['description'] : ''),
-    'maxlength' => '100',
+    'rows' => '6',
+    'cols' => '65',
     'placeholder' => 'Description'
 );
 
@@ -56,7 +57,8 @@ $howToUse = array(
     'id' => 'howtouse',
     'class' => 'form_input',
     'value' => set_value('howtouse', isset($dbData['howtouse']) ? $dbData['howtouse'] : ''),
-    'maxlength' => '100',
+    'rows' => '6',
+    'cols' => '65',
     'placeholder' => 'How to use steps ...'
 );
 
@@ -64,5 +66,21 @@ $fileUpload = array(
     'name' => 'fileupload',
     'id' => 'fileupload',
     'class' => 'form_input',
+);
+
+$uploadButton = array(
+    'name' => 'Filedata',
+    'class' => 'fileUploadButton',
+    'id' => 'upload',
+    'content' => 'Upload Files'
+);
+
+$gitLink = array(
+    'name' => 'gitlink',
+    'id' => 'gitlink',
+    'class' => 'form_input',
+    'value' => set_value('gitlink', isset($dbData['gitlink']) ? $dbData['gitlink'] : ''),
+    'maxlength' => '255',
+    'placeholder' => 'Paste Git Link Here'
 );
 ?>

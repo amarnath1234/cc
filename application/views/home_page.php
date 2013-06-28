@@ -9,6 +9,12 @@
     <div style="clear:both;"></div>
 </div>
 
+<!-- 
+use this 
+"substr($string, 0, $limit) . (strlen($string) > $limit ? "..." : '');" ... 
+to create ellipses after the text you entered 
+-->
+
 <div class="content_box" class="js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".display_box" }'>
     <div id="col1" class="column">
         <div class="display_box">
@@ -68,7 +74,7 @@
     
     <div id="col3" class="column">
          <div class="display_box">
-        <div class="heading">This is the Title text </div>
+        <div class="heading">This is the Title text and this is some more of that </div>
         <div class="author">- Authorname here</div>
         <div style="clear:both;"></div>
         <p>Some description here lkdgjolidfg ldksjdfh dfh dfglkdfm ldfmgkldmflgmdfl mdflgm lkdfmglkdfm lgkdmflgm lk</p>
