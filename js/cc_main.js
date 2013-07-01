@@ -8,10 +8,7 @@ $(document).ready(function() {
         showForgotPasswordBox();
     });
     
-    $('#content_box').masonry({
-  columnWidth: 150,
-  itemSelector: '.display_box'
-});
+  
 });
 
 function showLoginBox() {

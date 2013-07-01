@@ -63,15 +63,17 @@ $howToUse = array(
 );
 
 $fileUpload = array(
-    'name' => 'fileupload',
+    'name' => 'upload[]',
     'id' => 'fileupload',
     'class' => 'form_input',
+    'multiple' => 'multiple',
+    'size' => "1"
 );
 
 $uploadButton = array(
     'name' => 'Filedata',
     'class' => 'fileUploadButton',
-    'id' => 'upload',
+    'id' => 'uploadButton',
     'content' => 'Upload Files'
 );
 

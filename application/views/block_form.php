@@ -1,18 +1,31 @@
 <?php
    include 'forms/form_elements.php';
-   include 'upload/view.php';
+   require_once "phpuploader/include_phpuploader.php"; 
 ?>
-<link href="<?=base_url()?>css/uploadify/uploadify.css" rel="stylesheet">
+
 <script type="text/javascript" language="javascript" src="<?php echo base_url();?>js/cc_block_form.js"></script>
-
-
+<script type="text/javascript">
+	function doStart()
+	{
+		var uploadobj = document.getElementById('myuploader');
+		if (uploadobj.getqueuecount() > 0)
+		{
+			uploadobj.startupload();
+		}
+		else
+		{
+			alert("Please browse files for upload");
+		}
+	}
+</script>
+        
 <div class="content_box">
     <div class="main_box_left">
         <?php 
             $formAttributes = array('class' => 'block_form', 'id' => 'block_form', 'onSubmit' => 'return blockFormCheck()');
             $submitAttributes = 'class = "site_button"';
             if($action == 'register') {
-                echo form_open('register', $formAttributes);
+                echo form_open_multipart('register', $formAttributes);
                 ?> <div class="box_title">New Item</div> <?php
             } else {
                 echo form_open_multipart('edit/'.$id, $formAttributes);
@@ -42,20 +55,38 @@
         
         <table width="100%">
             <tr>
-                <td style="width: 130px;">
-                    
-                    <? echo form_upload($uploadButton);?>
-                </td>
-                <td style="width: 40px;">
-                    or
-                </td>
-                <td>
+                 <td>
                     <? echo form_input($gitLink);?>
                 </td>
             </tr>
+            <tr> 
+                <td style="padding:5px;font-size: 13px;">&nbsp;&nbsp;&nbsp;&nbsp;OR</td>                
+            </tr>
+            <tr>
+                <td style="width: 170px;">                    
+                    <!-- do not need enctype="multipart/form-data" -->
+                    
+                    <?php			
+              
+			$uploader=new PhpUploader();
+			$uploader->MaxSizeKB=10240;
+			$uploader->Name="myuploader";
+                        $uploader->SaveDirectory=  APPPATH."../upload";
+			$uploader->InsertText="Upload files (Max 10M)";
+			$uploader->AllowedFileExtensions="*.jpg,*.png,*.gif,*.txt,*.zip,*.rar";	
+			$uploader->MultipleFilesUpload=true;
+			$uploader->ManualStartUpload=true;
+			$uploader->Render();
+                    ?>
+                    
+                </td>
+               
+            </tr>
+                
+                
+            </tr>
         </table>
-           
-            
+                       
             <div id="tempUploadedFiles" class="tempUploadedFiles">
                 
             </div>    
@@ -65,6 +96,7 @@
              <br/>
         <?php echo form_submit('blockFromSubmit', ' Save ', $submitAttributes);?>            
         <a href="" class="submitExtras"> Preview </a>    
+        <div class="err_msg">This is the error message message</div>
         </p>
         <?php            
             echo form_close();

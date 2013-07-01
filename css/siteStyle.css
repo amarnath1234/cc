@@ -219,6 +219,8 @@ input[type="text"], input[type="password"]{
     border: 1px solid #cccccc;
     padding-left: 10px;
     margin-bottom: 5px;
+    font-size: 14px;
+    color:#333333;
 }
 
 .main_box_left p{
@@ -230,8 +232,10 @@ input[type="text"], input[type="password"]{
 
 .fileUploadButton{
     padding:5px 7px;
+    width:150px;
+    height: 30px;
     border: 1px solid #0067CD;
-    cursor: pointer;
+    cursor: default;
     color: #ffffff;
     font-weight: bold;
     border-radius: 3px 3px 3px 3px;
@@ -251,7 +255,7 @@ input[type="text"], input[type="password"]{
 	color-stop(0.69, rgb(66,138,189))
 );
 }
-
+/*
 .fileUploadButton:hover{
     color:#f0f0f0;
     background-image: linear-gradient(bottom, rgb(63,104,153) 55%, rgb(72,134,179) 69%);
@@ -285,6 +289,29 @@ background-image: -webkit-gradient(
 	color-stop(0.75, rgb(63,104,153))
 );
 }
+*/
+.main_box_left p #title, #gitlink{
+    width: 470px;
+}
+
+/*
+#fileupload{
+    z-index: 99;
+    opacity: 0;
+    width: 150px;
+    height: 30px;
+    border: 1px solid #ff0000;
+    margin-top: -30px;
+}
+
+
+  Concentrating only on mozilla ... only mozilla styling
+@-moz-document url-prefix() {
+   #fileupload {
+        margin-top: -30px;;
+    }
+}
+*/
 
 .help_box_right{
     float: right;
@@ -298,12 +325,23 @@ input[name="blockFromSubmit"]{
    margin: 10px 100px 20px 0px;
 }
 
-.submitExtras {
+a.submitExtras {
    float: right;
    margin: 20px 20px 20px 0px;
    text-decoration: none;
+   color: #666666;
+}
+
+a.submitExtras:hover {
+    color:#222222;
+    text-decoration: none;
 }
 
 .submitExtras:hover{
     text-decoration: underline;
+}
+
+.err_msg{
+    color:#ff0000;
+    margin: 20px 0px 0px 20px;
 }
