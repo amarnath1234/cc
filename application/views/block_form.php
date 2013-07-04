@@ -20,7 +20,7 @@
 </script>
         
 <div class="content_box">
-    <div class="main_box_left">
+    <div class="main_box_left" id="ContributeEditBlockForm">
         <?php 
             $formAttributes = array('class' => 'block_form', 'id' => 'block_form', 'onSubmit' => 'return blockFormCheck()');
             $submitAttributes = 'class = "site_button"';
@@ -96,7 +96,7 @@
              <br/>
         <?php echo form_submit('blockFromSubmit', ' Save ', $submitAttributes);?>            
         <a href="" class="submitExtras"> Preview </a>    
-        <div class="err_msg">This is the error message message</div>
+        <div id="block_form_err" class="error_msg">This is the error message message</div>
         </p>
         <?php            
             echo form_close();
